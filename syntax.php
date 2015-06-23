@@ -18,20 +18,6 @@ require_once(DOKU_PLUGIN.'syntax.php');
 class syntax_plugin_pagebreak extends DokuWiki_Syntax_Plugin {
 
     /**
-     * return some info
-     */
-    function getInfo(){
-        return array(
-            'author' => 'Jonathan McBride and Chris Sturm',
-            'email'  => 'j.mcbride@mail.utexas.edu',
-            'date'   => '2007-08-08',
-            'name'   => 'Pagebreak Plugin',
-            'desc'   => 'Inserts " <br style="page-break-after:always;"> " into the html of the document for every <pagebreak> it encounters',
-            'url'    => 'NA',
-        );
-    }
-
-    /**
      * What kind of syntax are we?
      */
     function getType(){
@@ -78,7 +64,7 @@ class syntax_plugin_pagebreak extends DokuWiki_Syntax_Plugin {
      */
     function render($mode, &$renderer, $data) {
         if($mode == 'xhtml' || $mode='pdf'){
-            $renderer->doc .= "<br style=\"page-break-after:always;\">";            // ptype = 'normal'
+            $renderer->doc .= "<br style=\"page-break-after:always;\">";
             $renderer->doc .= "<pagebreak />";
             return true;
         }
