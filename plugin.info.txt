@@ -1,0 +1,7 @@
+base    pagebreak
+author
+email   
+date    2015-06-23
+name    Pagebreak plugin
+desc    Inserts " <br style="page-break-after:always;"> " into the html of the document for every <pagebreak> it encounters
+url     https://www.dokuwiki.org/plugin:pagebreak
