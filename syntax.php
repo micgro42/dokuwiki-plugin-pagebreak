@@ -63,9 +63,12 @@ class syntax_plugin_pagebreak extends DokuWiki_Syntax_Plugin {
      * Create output
      */
     function render($mode, &$renderer, $data) {
-        if($mode == 'xhtml' || $mode='pdf'){
+        if($mode == 'xhtml' || $mode == 'pdf'){
             $renderer->doc .= "<br style=\"page-break-after:always;\">";
             $renderer->doc .= "<pagebreak />";
+            return true;
+        } else if ($mode == 'odt') {
+            $renderer->pagebreak();
             return true;
         }
         return false;
