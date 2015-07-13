@@ -63,7 +63,7 @@ class syntax_plugin_pagebreak extends DokuWiki_Syntax_Plugin {
      * Create output
      */
     function render($mode, &$renderer, $data) {
-        if($mode == 'xhtml' || $mode == 'pdf'){
+        if($mode == 'xhtml'){
             if(is_a($renderer,'renderer_plugin_dw2pdf')){
                 $renderer->doc .= "<pagebreak />";
             } else {
